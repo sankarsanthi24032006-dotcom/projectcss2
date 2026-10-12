@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>APJ Furniture</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fefdfd;
+            color: #333;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        
+
+        header {
+            padding: 25px 5%;
+            background: #fffdf9;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #d9a45f;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #444;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #f5a623;
+        }
+
+        .nav-links i {
+            font-size: 10px;
+            margin-left: 5px;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 25px;
+            font-size: 17px;
+        }
+
+        .nav-icons i {
+            cursor: pointer;
+        }
+
+
+
+        .hero {
+            width: 90%;
+            margin: 10px auto 45px;
+            position: relative;
+            min-height: 390px;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 30px;
+            right: 4%;
+            width: 68%;
+            height: 330px;
+            background: #ffead1;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 68%;
+            height: 310px;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            width: 47%;
+            padding: 25px;
+            background: rgba(255, 253, 249, 0.93);
+            z-index: 2;
+            border-radius: 5px;
+        }
+
+        .hero-content h1 {
+            color: #e9aa59;
+            font-size: 35px;
+            line-height: 1.18;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 13px;
+            line-height: 1.65;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #ffad42;
+            color: white;
+            padding: 12px 18px;
+            font-size: 12px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #e98716;
+        }
+
+        .hero-btn i {
+            margin-left: 8px;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            right: 52%;
+            bottom: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .slider-buttons button {
+            width: 38px;
+            height: 38px;
+            background: #fff;
+            color: #d9a45f;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px #00000008;
+        }
+
+
+        
+
+        .trusted {
+            width: 90%;
+            margin: auto;
+            padding: 20px 0 65px;
+            text-align: center;
+        }
+
+        .trusted h4 {
+            color: #888;
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 35px;
+        }
+
+        .company-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .company-logos span {
+            font-size: 22px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .company-logos .tokopedia {
+            font-weight: 600;
+        }
+
+        .company-logos .microsoft {
+            font-size: 18px;
+        }
+
+
+        
+        .interior {
+            background: #fffdf9;
+            padding: 25px 5% 55px;
+        }
+
+        .interior-container {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .interior-left h2 {
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .main-interior {
+            position: relative;
+            padding: 0 10px 10px 0;
+        }
+
+        .main-interior::after {
+            content: "";
+            position: absolute;
+            background: #ffecd6;
+            right: 0;
+            bottom: 0;
+            width: 90%;
+            height: 90%;
+            z-index: 0;
+        }
+
+        .main-interior img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .image-controls {
+            position: absolute;
+            right: 15px;
+            bottom: 20px;
+            z-index: 2;
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-controls button {
+            width: 36px;
+            height: 36px;
+            border-radius: 5px;
+            background: #fff;
+            color: #d9a45f;
+            font-size: 14px;
+        }
+
+
+        
+        .interior-items {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .interior-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .interior-item img {
+            width: 125px;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 5px;
+            flex-shrink: 0;
+        }
+
+        .interior-item h3 {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .interior-item p {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #777;
+            margin-bottom: 9px;
+        }
+
+        .read-more {
+            font-size: 11px;
+            color: #555;
+        }
+
+        .read-more i {
+            color: #d9a45f;
+            margin-left: 8px;
+        }
+
+
+        
+
+        .products {
+            width: 90%;
+            margin: auto;
+            padding: 10px 0 55px;
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .products-header h2 {
+            font-size: 25px;
+        }
+
+        .see-all {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .see-all i {
+            color: #d9a45f;
+            margin-left: 8px;
+        }
+        .categories {
+            display: flex;
+            gap: 25px;
+            margin: 18px 0 25px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .categories a {
+            color: #888;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .categories a.selected {
+            color: #333;
+            font-weight: bold;
+        }
+
+
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #f9d6ae;
+            padding: 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+            min-width: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px #0000000d;
+        }
+
+        .product-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .product-top small {
+            color: #999;
+            font-size: 10px;
+        }
+
+        .product-top h3 {
+            font-size: 13px;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .cart-icon {
+            color: #ff8500;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cart-icon:hover {
+            color: #d96900;
+            transform: scale(1.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: contain;
+            margin: 8px 0;
+        }
+
+
+        .price-box {
+            display: inline-block;
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 20px;
+            margin-top: 5px;
+        }
+
+        .price {
+            color: #ff8500;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+
+        
+        .subscribe {
+            width: 100%;
+            padding: 45px 5%;
+            min-height: 205px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 35px;
+            background-color: #e4b474;
+            background-image:
+                repeating-radial-gradient(
+                    circle at 0 0,
+                    transparent 0,
+                    rgba(255,255,255,0.07) 8px,
+                    transparent 16px
+                );
+        }
+
+        .subscribe-content {
+            max-width: 470px;
+        }
+
+        .subscribe-content h2 {
+            color: white;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .subscribe-content p {
+            color: white;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .subscribe-form {
+            display: flex;
+            align-items: center;
+            width: 47%;
+            max-width: 500px;
+            padding: 4px;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            min-width: 0;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 15px;
+            font-size: 12px;
+        }
+
+        .subscribe-form button {
+            background: #ffa83d;
+            color: white;
+            padding: 15px 22px;
+            border-radius: 5px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .subscribe-form button:hover {
+            background: #e78315;
+        }
+
+        footer {
+            background: #e4b474;
+            color: white;
+            padding: 0 5% 25px;
+        }
+
+        .footer-line {
+            border-top: 1px solid rgba(255,255,255,0.5);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-copy h4 {
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        .footer-copy p {
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            font-size: 11px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+                <span>APJ</span> Furniture
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#" class="active">Home</a>
+                </li>
+
+                <li>
+                    <a href="#products">
+                        Product
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#interior">About</a>
+                </li>
+
+                <li>
+                    <a href="#footer">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+   
+    <section class="hero">
+
+        <div class="hero-background"></div>
+
+        <div class="hero-image">
+            <img src="header.png" alt="Modern furniture living room">
+        </div>
+
+        <div class="hero-content">
+
+            <h1>
+                Help You To Make
+                Modern Furniture
+            </h1>
+
+            <p>
+                We help you to create organize your room
+                to be more cozy, design by professional
+                interior designer.
+            </p>
+
+            <a href="#products" class="hero-btn">
+                See Our Product
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+        </div>
+
+        <div class="slider-buttons">
+
+            <button aria-label="Previous slide">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button aria-label="Next slide">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    
+    <section class="trusted">
+
+        <h4>Some of our trusted company</h4>
+
+        <div class="company-logos">
+
+            <img src="google.png" alt="">
+        </div>
+
+    </section>
+
+
+    
+
+    <section class="interior" id="interior">
+
+        <div class="interior-container">
+
+            <div class="interior-left">
+
+                <h2>
+                    Some of the interiors that we
+                    provide for you
+                </h2>
+
+                <div class="main-interior">
+
+                    <img src="Group 30.png"
+                         alt="Modern living room interior">
+
+                    <div class="image-controls">
+
+                        <button aria-label="Previous interior">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button aria-label="Next interior">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="interior-items">
+
+                
+
+                <div class="interior-item">
+
+                    <img src="Rectangle 92.png"
+                         alt="Living Room">
+
+                    <div>
+
+                        <h3>Living Room</h3>
+
+                        <p>
+                            As one of the most-frequent spots
+                            in the home a living room sets
+                            the tone for the rest of the house.
+                        </p>
+
+                        <a href="#interior" class="read-more">
+                            Read More
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                
+                <div class="interior-item">
+
+                    <img src="Rectangle 92 (1).png"
+                         alt="Bedroom">
+
+                    <div>
+
+                        <h3>Bedroom</h3>
+
+                        <p>
+                            Unleash your creativity to make
+                            not only comfortable but also
+                            a pleasant place to start and end your day.
+                        </p>
+
+                        <a href="#interior" class="read-more">
+                            Read More
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                
+                <div class="interior-item">
+
+                    <img src="Rectangle 92 (2).png"
+                         alt="Home Office">
+
+                    <div>
+
+                        <h3>Office</h3>
+
+                        <p>
+                            The home office design ideas featured here
+                            are maximized  for efficiency,optimized for 
+                            space,and improvised for comfort by 
+                            spacejoy designers
+                        </p>
+
+                        <a href="#interior" class="read-more">
+                            Read More
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+    <section class="products" id="products">
+
+        <div class="products-header">
+
+            <h2>Products</h2>
+
+            <a href="#products" class="see-all">
+                See All
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+        </div>
+
+
+        
+
+        <div class="categories">
+
+            <a href="#products" class="selected">All</a>
+
+            <a href="#bed">Bed</a>
+
+            <a href="#chair">Chair</a>
+
+            <a href="#light">Light</a>
+
+            <a href="#sofa">Sofa</a>
+
+        </div>
+
+
+        
+        <div class="product-grid">
+
+            <div class="product-card" id="sofa">
+
+                <div class="product-top">
+
+                    <div>
+                        <small>Sofa</small>
+                        <h3>Glossy Cube</h3>
+                    </div>
+
+                    <i class="fa-solid fa-cart-shopping cart-icon"
+                       title="Add to cart"></i>
+
+                </div>
+
+                <img src="unnamed (5) 1.png"
+                     alt="Glossy Cube Sofa">
+
+                <div class="price-box">
+                    <span class="price">₹40,000</span>
+                </div>
+
+            </div>
+
+
+            
+
+            <div class="product-card" id="light">
+
+                <div class="product-top">
+
+                    <div>
+                        <small>Light</small>
+                        <h3>Floor Monolamp</h3>
+                    </div>
+
+                    <i class="fa-solid fa-cart-shopping cart-icon"
+                       title="Add to cart"></i>
+
+                </div>
+
+                <img src="unnamed (5) 1 (1).png"
+                     alt="Floor Monolamp">
+
+                <div class="price-box">
+                    <span class="price">₹21,000</span>
+                </div>
+
+            </div>
+
+
+            
+            <div class="product-card" id="chair">
+
+                <div class="product-top">
+
+                    <div>
+                        <small>Chair</small>
+                        <h3>Vintage Chair</h3>
+                    </div>
+
+                    <i class="fa-solid fa-cart-shopping cart-icon"
+                       title="Add to cart"></i>
+
+                </div>
+
+                <img src="unnamed (5) 1 (2).png"
+                     alt="Vintage Chair">
+
+                <div class="price-box">
+                    <span class="price">₹41,000</span>
+                </div>
+
+            </div>
+
+
+           
+            <div class="product-card" id="bed">
+
+                <div class="product-top">
+
+                    <div>
+                        <small>Bed</small>
+                        <h3>Comfort King Bed</h3>
+                    </div>
+
+                    <i class="fa-solid fa-cart-shopping cart-icon"
+                       title="Add to cart"></i>
+
+                </div>
+
+                <img src="unnamed (5) 1 (3).png"
+                     alt="Comfort King Bed">
+
+                <div class="price-box">
+                    <span class="price">₹48,000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section class="subscribe" id="subscribe">
+
+        <div class="subscribe-content">
+
+            <h2>
+                SUBSCRIBE TO GET
+                <br>
+                THE LAST NEWS ABOUT US
+            </h2>
+
+            <p>
+                We recommended you to subscribe to our newspaper,
+                enter you email to get our daily update about us
+            </p>
+
+        </div>
+
+        <form class="subscribe-form" id="subscribeForm">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+                aria-label="Email address"
+                required>
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </section>
+
+
+    
+    <footer id="footer">
+
+        <div class="footer-line">
+
+            <div class="footer-copy">
+
+                <h4>PT. ANDARA PANCA JAYA</h4>
+
+                <p>
+                    © 2020. All rights reserved
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#interior">About Us</a>
+
+                <a href="#products">Partnership</a>
+
+                <a href="#footer">Privacy Police</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
